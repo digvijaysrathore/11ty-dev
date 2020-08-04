@@ -1,0 +1,24 @@
+---
+title: "Dev Resources"
+info: "This is a site where I compiled my dev resources."
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+</head>
+<body>
+	<h1>{{title}}</h1>
+	<p>{{info}}</p>
+	<br />
+	<section>
+		{% for resource in collections.resources %}
+		    <h2>
+		    	<a href="{{ resource.url }}">{{ resource.data.pageTitle }}</a>
+		    </h2>
+		    <em>{{ resource.date | date: "%Y-%m-%d" }}</em>
+		{% endfor %}
+	</section>
+</body>
+</html>
